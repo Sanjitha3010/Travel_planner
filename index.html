@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Planner — Plan Your Perfect Journey</title>
+  <meta name="description" content="Discover amazing destinations, organize your itinerary, calculate budgets, and plan your next adventure with Travel Planner.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="Travel Planner Home">
+        <span class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+          </svg>
+        </span>
+        <span class="brand-name">Travel Planner</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#explore" class="nav-link">Explore Destinations</a></li>
+          <li><a href="#plan" class="nav-link">Plan a Trip</a></li>
+          <li><a href="#my-trip" class="nav-link">My Trip</a></li>
+        </ul>
+        <div class="nav-cta-wrapper">
+          <a href="#plan" class="btn btn-primary btn-sm nav-cta">Start Planning</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            Your Smart Personal Journey Companion
+          </span>
+          <h1 class="hero-title">Plan Your Perfect Journey</h1>
+          <p class="hero-subtitle">Discover amazing destinations, organize your itinerary, and plan your next adventure with Travel Planner.</p>
+          
+          <div class="hero-actions">
+            <a href="#plan" class="btn btn-primary btn-lg pulse-glow">
+              <span>Start Planning</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#explore" class="btn btn-glass btn-lg">
+              <span>Explore Destinations</span>
+            </a>
+          </div>
+
+          <!-- Hero Value Highlights -->
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">⚡</span>
+              <div>
+                <strong>Instant Plan</strong>
+                <p>Personalized day-by-day guides</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">💰</span>
+              <div>
+                <strong>Smart Budgeting</strong>
+                <p>Cost breakdowns in INR (₹)</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">📄</span>
+              <div>
+                <strong>Print & Save</strong>
+                <p>Export ready PDF vouchers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Destination Showcase Preview -->
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="floating-destination-card card-top">
+              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=700&q=80" alt="Goa Beaches" class="floating-card-img" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80'">
+              <div class="floating-card-body">
+                <div class="floating-card-header">
+                  <span class="card-badge beach">Beach Paradise</span>
+                  <span class="card-rating">★ 4.9</span>
+                </div>
+                <h3>Goa, India</h3>
+                <p>Golden sands, Portuguese heritage & coastal feasts</p>
+                <div class="floating-card-footer">
+                  <span class="card-price">From ₹14,000 / person</span>
+                  <button class="btn-text-action" onclick="quickSelectDestination('Goa')">Plan This →</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-mini-badge badge-1">
+              <span class="badge-emoji">🏔️</span>
+              <div>
+                <small>Hill Station</small>
+                <strong>Ooty & Manali</strong>
+              </div>
+            </div>
+
+            <div class="floating-mini-badge badge-2">
+              <span class="badge-emoji">🌴</span>
+              <div>
+                <small>Tropical Escape</small>
+                <strong>Bali & Munnar</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Handpicked Destinations Preview -->
+    <section class="section popular-section" id="popular">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Top Travel Picks</span>
+          <h2 class="section-title">Popular Destinations for Your Next Holiday</h2>
+          <p class="section-desc">Handpicked traveler favorites across hills, beaches, heritage cities, and tropical wonderlands.</p>
+        </div>
+
+        <div class="popular-grid" id="popularGrid">
+          <!-- Populated dynamically by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Destinations Section -->
+    <section class="section explore-section" id="explore">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Find Inspiration</span>
+          <h2 class="section-title">Explore All Destinations</h2>
+          <p class="section-desc">Browse our curated vacation spots, explore estimated budgets, and click <strong>Plan This Trip</strong> to quickly customize your itinerary.</p>
+        </div>
+
+        <!-- Filter and Search Controls -->
+        <div class="explore-controls">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="destinationSearchInput" placeholder="Search by destination name, vibe, or state..." aria-label="Search destinations">
+            <button type="button" id="clearSearchBtn" class="clear-btn" aria-label="Clear search" style="display: none;">&times;</button>
+          </div>
+
+          <div class="filter-pills" id="filterPills" role="tablist" aria-label="Filter destinations by category">
+            <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All Places</button>
+            <button class="filter-pill" data-category="mountains" role="tab" aria-selected="false">Mountains & Hills</button>
+            <button class="filter-pill" data-category="beaches" role="tab" aria-selected="false">Beaches & Islands</button>
+            <button class="filter-pill" data-category="nature" role="tab" aria-selected="false">Nature & Tea Valleys</button>
+            <button class="filter-pill" data-category="culture" role="tab" aria-selected="false">Heritage & Palaces</button>
+            <button class="filter-pill" data-category="international" role="tab" aria-selected="false">International</button>
+          </div>
+        </div>
+
+        <!-- Destinations Cards Grid -->
+        <div class="destinations-grid" id="destinationsGrid">
+          <!-- Rendered dynamically by script.js -->
+        </div>
+        <div id="noDestinationsFound" class="empty-results-box" style="display: none;">
+          <p>🔍 No destinations match your search or filter. Try a different keyword!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trip Planning Form Section -->
+    <section class="section plan-section" id="plan">
+      <div class="container">
+        <div class="plan-wrapper">
+          <div class="section-header text-center">
+            <span class="section-subtitle">Tailored To You</span>
+            <h2 class="section-title">Plan Your Custom Trip</h2>
+            <p class="section-desc">Enter your travel details below and our interactive planner will craft a day-by-day itinerary and realistic budget estimate in INR.</p>
+          </div>
+
+          <!-- Interactive Trip Planning Form -->
+          <form id="tripForm" class="trip-form-card" novalidate>
+            <div class="form-grid">
+              
+              <!-- Starting Location -->
+              <div class="form-group">
+                <label for="startLocation">
+                  <span class="input-icon">📍</span>
+                  Starting Location <span class="required">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="startLocation" 
+                  name="startLocation" 
+                  placeholder="e.g. Mumbai, Bengaluru, Delhi, Hyderabad" 
+                  list="popularOrigins" 
+                  required
+                >
+                <datalist id="popularOrigins">
+                  <option value="Mumbai">
+                  <option value="Delhi">
+                  <option value="Bengaluru">
+                  <option value="Chennai">
+                  <option value="Hyderabad">
+                  <option value="Kolkata">
+                  <option value="Pune">
+                  <option value="Ahmedabad">
+                  <option value="Kochi">
+                </datalist>
+                <small class="form-error-msg" id="startLocationError"></small>
+              </div>
+
+              <!-- Destination -->
+              <div class="form-group">
+                <label for="destination">
+                  <span class="input-icon">🎯</span>
+                  Destination <span class="required">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="destination" 
+                  name="destination" 
+                  placeholder="e.g. Ooty, Goa, Manali, Munnar, Bali..." 
+                  list="popularDestinationsList" 
+                  required
+                >
+                <datalist id="popularDestinationsList">
+                  <option value="Ooty">
+                  <option value="Goa">
+                  <option value="Manali">
+                  <option value="Munnar">
+                  <option value="Jaipur">
+                  <option value="Bali">
+                  <option value="Ladakh">
+                  <option value="Varanasi">
+                  <option value="Andaman Islands">
+                </datalist>
+                <small class="form-error-msg" id="destinationError"></small>
+              </div>
+
+              <!-- Departure Date -->
+              <div class="form-group">
+                <label for="departureDate">
+                  <span class="input-icon">📅</span>
+                  Departure Date <span class="required">*</span>
+                </label>
+                <input 
+                  type="date" 
+                  id="departureDate" 
+                  name="departureDate" 
+                  required
+                >
+                <small class="form-error-msg" id="departureDateError"></small>
+              </div>
+
+              <!-- Return Date -->
+              <div class="form-group">
+                <label for="returnDate">
+                  <span class="input-icon">📆</span>
+                  Return Date <span class="required">*</span>
+                </label>
+                <input 
+                  type="date" 
+                  id="returnDate" 
+                  name="returnDate" 
+                  required
+                >
+                <small class="form-error-msg" id="returnDateError"></small>
+              </div>
+
+              <!-- Number of Travellers -->
+              <div class="form-group">
+                <label for="travellers">
+                  <span class="input-icon">👥</span>
+                  Number of Travellers <span class="required">*</span>
+                </label>
+                <div class="number-input-wrapper">
+                  <button type="button" class="stepper-btn" id="decrementTravellers" aria-label="Decrease travellers">−</button>
+                  <input 
+                    type="number" 
+                    id="travellers" 
+                    name="travellers" 
+                    min="1" 
+                    max="30" 
+                    value="2" 
+                    required
+                  >
+                  <button type="button" class="stepper-btn" id="incrementTravellers" aria-label="Increase travellers">+</button>
+                </div>
+                <small class="form-error-msg" id="travellersError"></small>
+              </div>
+
+              <!-- Budget in INR -->
+              <div class="form-group">
+                <label for="budget">
+                  <span class="input-icon">💵</span>
+                  Total Budget in INR (₹) <span class="required">*</span>
+                </label>
+                <div class="currency-input-wrapper">
+                  <span class="currency-symbol">₹</span>
+                  <input 
+                    type="number" 
+                    id="budget" 
+                    name="budget" 
+                    min="1000" 
+                    step="500" 
+                    placeholder="e.g. 35000" 
+                    required
+                  >
+                </div>
+                <small class="form-error-msg" id="budgetError"></small>
+              </div>
+
+            </div>
+
+            <!-- Travel Type -->
+            <div class="form-section-block">
+              <label class="section-label">
+                <span class="input-icon">🧳</span>
+                Select Travel Type <span class="required">*</span>
+              </label>
+              <div class="choice-cards-grid" role="radiogroup" aria-label="Travel Type">
+                
+                <label class="choice-card">
+                  <input type="radio" name="travelType" value="Adventure">
+                  <div class="choice-content">
+                    <span class="choice-icon">🧗‍♂️</span>
+                    <span class="choice-title">Adventure</span>
+                    <span class="choice-desc">Treks, thrills & sports</span>
+                  </div>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="travelType" value="Relaxation" checked>
+                  <div class="choice-content">
+                    <span class="choice-icon">🧘</span>
+                    <span class="choice-title">Relaxation</span>
+                    <span class="choice-desc">Peace, spas & nature</span>
+                  </div>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="travelType" value="Family">
+                  <div class="choice-content">
+                    <span class="choice-icon">👨‍👩‍👧‍👦</span>
+                    <span class="choice-title">Family</span>
+                    <span class="choice-desc">Comfort & all-age fun</span>
+                  </div>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="travelType" value="Solo">
+                  <div class="choice-content">
+                    <span class="choice-icon">🎒</span>
+                    <span class="choice-title">Solo</span>
+                    <span class="choice-desc">Freedom & exploration</span>
+                  </div>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="travelType" value="Romantic">
+                  <div class="choice-content">
+                    <span class="choice-icon">💑</span>
+                    <span class="choice-title">Romantic</span>
+                    <span class="choice-desc">Cozy, sunsets & dining</span>
+                  </div>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" name="travelType" value="Cultural">
+                  <div class="choice-content">
+                    <span class="choice-icon">🏛️</span>
+                    <span class="choice-title">Cultural</span>
+                    <span class="choice-desc">Heritage, art & traditions</span>
+                  </div>
+                </label>
+
+              </div>
+              <small class="form-error-msg" id="travelTypeError"></small>
+            </div>
+
+            <!-- Interests (Multi-select) -->
+            <div class="form-section-block">
+              <label class="section-label">
+                <span class="input-icon">✨</span>
+                Select Interests <span class="required">*</span>
+                <span class="label-hint">(Select one or more)</span>
+              </label>
+              <div class="interest-chips-grid">
+                
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Nature" checked>
+                  <span class="chip-label">🌿 Nature</span>
+                </label>
+
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Beaches">
+                  <span class="chip-label">🏖️ Beaches</span>
+                </label>
+
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Mountains">
+                  <span class="chip-label">⛰️ Mountains</span>
+                </label>
+
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Historical Places">
+                  <span class="chip-label">🏰 Historical Places</span>
+                </label>
+
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Temples">
+                  <span class="chip-label">🛕 Temples</span>
+                </label>
+
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Food" checked>
+                  <span class="chip-label">🍜 Food & Cuisine</span>
+                </label>
+
+                <label class="interest-chip">
+                  <input type="checkbox" name="interests" value="Shopping">
+                  <span class="chip-label">🛍️ Shopping</span>
+                </label>
+
+              </div>
+              <small class="form-error-msg" id="interestsError"></small>
+            </div>
+
+            <!-- Form Global Alert Banner -->
+            <div id="formGlobalAlert" class="form-global-alert" style="display: none;"></div>
+
+            <!-- Submit Button -->
+            <div class="form-submit-wrapper">
+              <button type="submit" id="generatePlanBtn" class="btn btn-primary btn-xl submit-plan-btn">
+                <span class="btn-text">Generate Travel Plan</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 7-7 7 7"/>
+                  <path d="M12 19V5"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Trip & Itinerary Section -->
+    <section class="section my-trip-section" id="my-trip">
+      <div class="container">
+        
+        <!-- Header -->
+        <div class="section-header text-center">
+          <span class="section-subtitle">Live Travel Itinerary</span>
+          <h2 class="section-title">My Trip</h2>
+          <p class="section-desc">View your customized daily schedule, estimated expense breakdown, and manage your travel plan.</p>
+        </div>
+
+        <!-- Empty State (Shown before a plan is generated) -->
+        <div class="my-trip-empty" id="tripEmptyState">
+          <div class="empty-graphic">
+            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="3" rx="2"/>
+              <path d="m9 8 6 4-6 4Z"/>
+              <path d="M3 9h18"/>
+            </svg>
+          </div>
+          <h3>No Trip Generated Yet</h3>
+          <p>Ready to explore? Fill out the trip planning form above or pick an inspiring destination to generate your personalized itinerary and budget calculation!</p>
+          <a href="#plan" class="btn btn-primary btn-md">Plan a Trip Now</a>
+        </div>
+
+        <!-- Active Trip Container (Shown dynamically after generation) -->
+        <div class="my-trip-content" id="tripActiveContent" style="display: none;">
+          
+          <!-- Trip Overview Card -->
+          <div class="trip-overview-card" id="tripOverviewCard">
+            <div class="overview-header">
+              <div class="overview-title-group">
+                <div class="route-badge" id="tripRouteBadge">
+                  <span id="overviewStart">Starting City</span>
+                  <span class="route-arrow">➔</span>
+                  <span id="overviewDest" class="route-destination">Destination</span>
+                </div>
+                <h3 class="overview-trip-heading" id="overviewTripHeading">Trip to Destination</h3>
+                <div class="overview-meta-tags">
+                  <span class="meta-tag" id="overviewDates">📅 Dates</span>
+                  <span class="meta-tag" id="overviewDuration">⏱️ X Days / Y Nights</span>
+                  <span class="meta-tag" id="overviewTravellers">👥 X Travellers</span>
+                  <span class="meta-tag" id="overviewType">🧳 Type</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="trip-action-buttons no-print">
+                <button type="button" class="btn btn-outline btn-sm" id="editTripBtn" title="Modify dates, budget or preferences">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                  </svg>
+                  <span>Edit Details</span>
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" id="regenerateTripBtn" title="Generate alternate activities">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                    <path d="M3 3v5h5"/>
+                    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                    <path d="M16 21h5v-5"/>
+                  </svg>
+                  <span>Regenerate</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" id="printTripBtn" title="Print or save as PDF">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"/>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                    <rect width="12" height="8" x="6" y="14"/>
+                  </svg>
+                  <span>Print / PDF</span>
+                </button>
+                <button type="button" class="btn btn-danger-soft btn-sm" id="clearTripBtn" title="Clear current plan">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 6h18"/>
+                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                  </svg>
+                  <span>Clear Plan</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Selected Interests Tags -->
+            <div class="overview-interests-wrapper">
+              <span class="interests-label">Focus Areas:</span>
+              <div class="interests-tags-list" id="overviewInterestsTags">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6: Budget Calculator & Breakdown Card -->
+          <div class="budget-calculator-card" id="budgetCard">
+            <div class="budget-card-header">
+              <div class="budget-header-left">
+                <span class="budget-badge-pill">Section 6 • Budget Breakdown</span>
+                <h3 class="budget-card-title">Estimated Trip Cost & Budget Analysis</h3>
+                <p class="budget-card-subtitle">Calculated automatically for <span id="budgetTravellerCount">2</span> travellers over <span id="budgetDayCount">5</span> days.</p>
+              </div>
+              <div class="budget-total-box">
+                <span class="budget-total-label">Total Estimated Cost</span>
+                <span class="budget-total-amount" id="budgetTotalCost">₹0</span>
+                <span class="budget-user-target" id="budgetUserTarget">Your Budget: ₹0</span>
+              </div>
+            </div>
+
+            <!-- Over-budget or Under-budget Dynamic Notification Message -->
+            <div class="budget-comparison-alert" id="budgetComparisonAlert" role="alert">
+              <!-- Dynamically populated by budget calculator in JS -->
+            </div>
+
+            <!-- 4 Categories Expense Grid -->
+            <div class="expense-categories-grid">
+              
+              <!-- 1. Transportation -->
+              <div class="expense-item-card">
+                <div class="expense-card-top">
+                  <div class="expense-icon-wrap transport">🚆</div>
+                  <div class="expense-meta">
+                    <h4>Transportation</h4>
+                    <small>Flights/trains + local transfers</small>
+                  </div>
+                </div>
+                <div class="expense-card-bottom">
+                  <span class="expense-amount" id="costTransport">₹0</span>
+                  <div class="cost-bar"><div class="cost-fill" id="barTransport" style="width: 25%;"></div></div>
+                </div>
+              </div>
+
+              <!-- 2. Accommodation -->
+              <div class="expense-item-card">
+                <div class="expense-card-top">
+                  <div class="expense-icon-wrap stay">🏨</div>
+                  <div class="expense-meta">
+                    <h4>Accommodation</h4>
+                    <small>Hotel / resort per night</small>
+                  </div>
+                </div>
+                <div class="expense-card-bottom">
+                  <span class="expense-amount" id="costAccommodation">₹0</span>
+                  <div class="cost-bar"><div class="cost-fill" id="barAccommodation" style="width: 35%;"></div></div>
+                </div>
+              </div>
+
+              <!-- 3. Food & Dining -->
+              <div class="expense-item-card">
+                <div class="expense-card-top">
+                  <div class="expense-icon-wrap food">🍽️</div>
+                  <div class="expense-meta">
+                    <h4>Food & Dining</h4>
+                    <small>Local cuisines & snacks</small>
+                  </div>
+                </div>
+                <div class="expense-card-bottom">
+                  <span class="expense-amount" id="costFood">₹0</span>
+                  <div class="cost-bar"><div class="cost-fill" id="barFood" style="width: 20%;"></div></div>
+                </div>
+              </div>
+
+              <!-- 4. Activities -->
+              <div class="expense-item-card">
+                <div class="expense-card-top">
+                  <div class="expense-icon-wrap activities">🎟️</div>
+                  <div class="expense-meta">
+                    <h4>Activities & Entry</h4>
+                    <small>Sightseeing, tickets & tours</small>
+                  </div>
+                </div>
+                <div class="expense-card-bottom">
+                  <span class="expense-amount" id="costActivities">₹0</span>
+                  <div class="cost-bar"><div class="cost-fill" id="barActivities" style="width: 20%;"></div></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Transparent estimate note -->
+            <div class="estimate-disclaimer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span><strong>Note:</strong> All itinerary items, timings, and expense breakdowns are realistic estimates and suggestions to guide your travel budgeting. Actual prices may vary depending on booking dates, season, and individual choices.</span>
+            </div>
+          </div>
+
+          <!-- Section 5: Dynamic Day-by-Day Itinerary Schedule -->
+          <div class="itinerary-schedule-wrapper">
+            <div class="itinerary-section-header">
+              <div class="header-left">
+                <span class="section-subtitle">Personalized Schedule</span>
+                <h3 class="itinerary-main-title">Day-by-Day Travel Plan</h3>
+              </div>
+              <div class="itinerary-legend">
+                <span class="legend-badge morning">🌅 Morning</span>
+                <span class="legend-badge afternoon">☀️ Afternoon</span>
+                <span class="legend-badge evening">🌙 Evening</span>
+              </div>
+            </div>
+
+            <!-- Dynamic Days Container -->
+            <div class="itinerary-days-container" id="itineraryDaysContainer">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+          <!-- Handy Travel Tips & Advice -->
+          <div class="travel-tips-card" id="travelTipsCard">
+            <div class="tips-header">
+              <span class="tips-icon">💡</span>
+              <h4>Smart Travel Tips for Your Trip</h4>
+            </div>
+            <div class="tips-grid" id="travelTipsGrid">
+              <!-- Rendered dynamically based on destination and travel type -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Website Footer -->
+  <footer class="site-footer no-print">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="logo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+              </svg>
+            </span>
+            <span class="brand-name">Travel Planner</span>
+          </div>
+          <p class="footer-bio">Your simple, responsive companion for exploring destinations, generating personalized day-by-day itineraries, and estimating travel budgets in INR.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#explore">Explore Destinations</a></li>
+            <li><a href="#plan">Plan a Trip</a></li>
+            <li><a href="#my-trip">My Trip</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h5>Featured Destinations</h5>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="quickSelectDestination('Ooty')">Ooty, Tamil Nadu</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectDestination('Goa')">Goa Beaches</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectDestination('Manali')">Manali, Himachal</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectDestination('Munnar')">Munnar, Kerala</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectDestination('Jaipur')">Jaipur, Rajasthan</a></li>
+            <li><a href="javascript:void(0)" onclick="quickSelectDestination('Bali')">Bali, Indonesia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h5>Travel Styles</h5>
+          <ul>
+            <li><span>🏔️ Mountain Escapes</span></li>
+            <li><span>🏖️ Coastal Holidays</span></li>
+            <li><span>🌿 Eco & Tea Trails</span></li>
+            <li><span>🏰 Heritage Excursions</span></li>
+            <li><span>💑 Romantic Gateways</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>Travel Planner</strong>. All rights reserved. Designed for hassle-free travel planning.</p>
+        <p class="footer-note">Built with HTML5, CSS3, and Vanilla JavaScript • No external server or API required.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Print Voucher Header & Footer (Visible only when printing or saving as PDF) -->
+  <div class="print-only print-header">
+    <div class="print-brand">
+      <h2>✈️ Travel Planner — Official Itinerary Voucher</h2>
+      <p>Generated via Travel Planner • Personal Travel Document</p>
+    </div>
+  </div>
+
+  <div class="print-only print-footer">
+    <p>Document generated on <span id="printDateStamp"></span> | Travel Planner — Plan Your Perfect Journey</p>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
+
